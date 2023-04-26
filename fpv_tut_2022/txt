@@ -1,0 +1,37 @@
+Proof: fact_aux acc n = acc * fact n
+1. Base case: n = 0, fact_aux acc 0 = acc * fact 0
+
+fact_aux acc 0
+= match 0 with 0 -> acc | n -> ... (fact_aux.def)
+= acc (match)
+= acc * 1 (arith.)
+= acc * (match 0 with 0 - > 1 | n -> ...) (match)
+= acc * fact 0 (fact.def)
+QED
+
+2. Inductive case: choose a random but fixed n from nature numbers,
+I.H. For an arbitrary value of acc, fact_aux acc n = acc * fact n
+TO prove: For an arbitrary value of acc,  fact_aux acc (n+1) = acc * fact (n+1)
+
+fact_aux acc (n+1)
+= match (n+1) with 0 -> acc | n' -> fact_aux (n+1) * acc n (fact_aux.def)
+= fact_aux (n+1) * acc n (match)
+= (n+1) * acc * fact n (I.H.)
+= acc * {(n+1) * fact n} (arith.)
+= acc * (match (n+1) with 0 -> acc | n' -> (n+1) * fact n) (match)
+= acc * fact (n+1) (fact.def)
+
+QED
+
+
+Nat: Zero, Suc n
+
+Tree:Empty, Node of t1 t2
+
+assume prop(t1) prop(t2) -> prop(Node (t1, t2))
+prop(Leaf)
+
+
+Datatype : Cons1 (d1, d2, d3 ...) Cons2 Cons3
+Assume: prop(d1) .. 
+Proof prop((d1, d2, d3 ...))

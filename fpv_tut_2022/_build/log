@@ -1,0 +1,5 @@
+# dune init project miniocaml_semantics
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /home/zixuan/Documents/fpv_tut
+# Auto-detected concurrency: 8

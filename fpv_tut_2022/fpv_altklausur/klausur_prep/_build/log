@@ -1,0 +1,117 @@
+# dune utop .
+# OCAMLPARAM: unset
+# Workspace root:
+# "/home/zixuan/\230\150\135\230\161\163/fpv_altklausur/klausur_prep"
+$ /usr/bin/nproc > /tmp/dune5ff881.output 2> /dev/null
+# Auto-detected concurrency: 8
+# disable binary cache
+$ /home/zixuan/.opam/4.13.0/bin/ocamlc.opt -config > /tmp/duneb34c58.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dyn
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = Some External "/home/zixuan/.opam/4.13.0/lib/toplevel"
+#  ; ocaml_bin = External "/home/zixuan/.opam/4.13.0/bin"
+#  ; ocaml = Ok External "/home/zixuan/.opam/4.13.0/bin/ocaml"
+#  ; ocamlc = External "/home/zixuan/.opam/4.13.0/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/home/zixuan/.opam/4.13.0/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/home/zixuan/.opam/4.13.0/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/home/zixuan/.opam/4.13.0/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/home/zixuan/.opam/4.13.0/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/home/zixuan/.opam/4.13.0/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/home/zixuan/\230\150\135\230\161\163/fpv_altklausur/klausur_prep"
+#        ; "INSIDE_DUNE" :
+#            "/home/zixuan/\230\150\135\230\161\163/fpv_altklausur/klausur_prep/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/home/zixuan/\230\150\135\230\161\163/fpv_altklausur/klausur_prep/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/home/zixuan/\230\150\135\230\161\163/fpv_altklausur/klausur_prep/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/home/zixuan/\230\150\135\230\161\163/fpv_altklausur/klausur_prep/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_path = [ External "/home/zixuan/.opam/4.13.0/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.13.0"
+#      ; standard_library_default = "/home/zixuan/.opam/4.13.0/lib/ocaml"
+#      ; standard_library = "/home/zixuan/.opam/4.13.0/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "gcc"
+#      ; ocamlc_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; bytecomp_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-ldl"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-ldl" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-pc-linux-gnu"
+#      ; target = "x86_64-pc-linux-gnu"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X030"
+#      ; cmi_magic_number = "Caml1999I030"
+#      ; cmo_magic_number = "Caml1999O030"
+#      ; cma_magic_number = "Caml1999A030"
+#      ; cmx_magic_number = "Caml1999Y030"
+#      ; cmxa_magic_number = "Caml1999Z030"
+#      ; ast_impl_magic_number = "Caml1999M030"
+#      ; ast_intf_magic_number = "Caml1999N030"
+#      ; cmxs_magic_number = "Caml1999D030"
+#      ; cmt_magic_number = "Caml1999T030"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /home/zixuan/.opam/4.13.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -bin-annot -I .utop/.utop.eobjs/byte -I /home/zixuan/.opam/4.13.0/lib/bytes -I /home/zixuan/.opam/4.13.0/lib/camomile -I /home/zixuan/.opam/4.13.0/lib/camomile/default_config -I /home/zixuan/.opam/4.13.0/lib/camomile/dyn -I /home/zixuan/.opam/4.13.0/lib/camomile/lib_default -I /home/zixuan/.opam/4.13.0/lib/camomile/library -I /home/zixuan/.opam/4.13.0/lib/charInfo_width -I /home/zixuan/.opam/4.13.0/lib/findlib -I /home/zixuan/.opam/4.13.0/lib/lambda-term -I /home/zixuan/.opam/4.13.0/lib/lwt -I /home/zixuan/.opam/4.13.0/lib/lwt/unix -I /home/zixuan/.opam/4.13.0/lib/lwt_log -I /home/zixuan/.opam/4.13.0/lib/lwt_log/core -I /home/zixuan/.opam/4.13.0/lib/lwt_react -I /home/zixuan/.opam/4.13.0/lib/mew -I /home/zixuan/.opam/4.13.0/lib/mew_vi -I /home/zixuan/.opam/4.13.0/lib/mmap -I /home/zixuan/.opam/4.13.0/lib/ocaml/compiler-libs -I /home/zixuan/.opam/4.13.0/lib/ocaml/threads -I /home/zixuan/.opam/4.13.0/lib/ocplib-endian -I /home/zixuan/.opam/4.13.0/lib/ocplib-endian/bigstring -I /home/zixuan/.opam/4.13.0/lib/react -I /home/zixuan/.opam/4.13.0/lib/result -I /home/zixuan/.opam/4.13.0/lib/seq -I /home/zixuan/.opam/4.13.0/lib/trie -I /home/zixuan/.opam/4.13.0/lib/utop -I /home/zixuan/.opam/4.13.0/lib/zed -no-alias-deps -o .utop/.utop.eobjs/byte/dune__exe__Utop.cmo -c -impl .utop/utop.ml-gen)
+$ (cd _build/default && /home/zixuan/.opam/4.13.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -o .utop/utop.exe -output-complete-exe /home/zixuan/.opam/4.13.0/lib/ocaml/compiler-libs/ocamlcommon.cma /home/zixuan/.opam/4.13.0/lib/ocaml/compiler-libs/ocamlbytecomp.cma /home/zixuan/.opam/4.13.0/lib/ocaml/compiler-libs/ocamltoplevel.cma /home/zixuan/.opam/4.13.0/lib/findlib/findlib.cma /home/zixuan/.opam/4.13.0/lib/findlib/findlib_top.cma /home/zixuan/.opam/4.13.0/lib/result/result.cma /home/zixuan/.opam/4.13.0/lib/lwt/lwt.cma /home/zixuan/.opam/4.13.0/lib/ocaml/unix.cma -I /home/zixuan/.opam/4.13.0/lib/ocaml /home/zixuan/.opam/4.13.0/lib/ocaml/bigarray.cma -I /home/zixuan/.opam/4.13.0/lib/ocaml /home/zixuan/.opam/4.13.0/lib/mmap/mmap.cma /home/zixuan/.opam/4.13.0/lib/ocplib-endian/ocplib_endian.cma /home/zixuan/.opam/4.13.0/lib/ocplib-endian/bigstring/ocplib_endian_bigstring.cma /home/zixuan/.opam/4.13.0/lib/ocaml/threads/threads.cma -I /home/zixuan/.opam/4.13.0/lib/ocaml /home/zixuan/.opam/4.13.0/lib/lwt/unix/lwt_unix.cma -I /home/zixuan/.opam/4.13.0/lib/lwt/unix /home/zixuan/.opam/4.13.0/lib/react/react.cma /home/zixuan/.opam/4.13.0/lib/lwt_react/lwt_react.cma /home/zixuan/.opam/4.13.0/lib/camomile/default_config/camomileDefaultConfig.cma /home/zixuan/.opam/4.13.0/lib/camomile/library/camomileLibrary.cma /home/zixuan/.opam/4.13.0/lib/camomile/lib_default/camomileLibraryDefault.cma /home/zixuan/.opam/4.13.0/lib/camomile/dyn/camomileLibraryDyn.cma /home/zixuan/.opam/4.13.0/lib/camomile/camomile_yuge.cma /home/zixuan/.opam/4.13.0/lib/charInfo_width/charInfo_width.cma /home/zixuan/.opam/4.13.0/lib/zed/zed.cma /home/zixuan/.opam/4.13.0/lib/lwt_log/core/lwt_log_core.cma /home/zixuan/.opam/4.13.0/lib/lwt_log/lwt_log.cma /home/zixuan/.opam/4.13.0/lib/trie/trie.cma /home/zixuan/.opam/4.13.0/lib/mew/mew.cma /home/zixuan/.opam/4.13.0/lib/mew_vi/mew_vi.cma /home/zixuan/.opam/4.13.0/lib/lambda-term/lambda_term.cma -I /home/zixuan/.opam/4.13.0/lib/lambda-term /home/zixuan/.opam/4.13.0/lib/utop/uTop.cma .utop/.utop.eobjs/byte/dune__exe__Utop.cmo -linkall -warn-error -31)

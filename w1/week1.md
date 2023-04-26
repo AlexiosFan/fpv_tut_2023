@@ -45,7 +45,7 @@ Which operations change the state, and which don't?
 ## The strong and the weak
 ![graph](w1_image1.svg)
 
-Consider the following questions at the program point $C$. \<br>
+Consider the following questions at the program point $C$. </br>
 1. When annotating the control flow graph, can you say that one of the given assertions is "better" than the others?
 (Hint: Think about implication)
 2. Can you arrange the given assertions in a meaningful order?
