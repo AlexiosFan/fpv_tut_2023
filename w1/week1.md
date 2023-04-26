@@ -20,8 +20,8 @@ When A and B are both T or F, the result is trivial. But can you explain the res
 
 A few useful logical equalities. </br>
 $A \Longrightarrow B \equiv \neg A \lor B$ <br>
-$ x = a \equiv x \leq a \land x \geq a $ <br>
-$ x \not= a \equiv x > a \lor x < a$ </br>
+$x = a \equiv x \leq a \land x \geq a$ <br>
+$x \not= a \equiv x > a \lor x < a$ </br>
 You can represent all the relations of integers( and natural numbers) only with $\leq$
 
 ## Assertions
