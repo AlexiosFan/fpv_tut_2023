@@ -8,6 +8,7 @@ This repo is made up of 2 parts.
 - The new materials from the current year, which are all markdown files. To use them you should open the file in vscode editor and have the following extensions for markdown installed:
   1. Markdown
   2. Reddit Spoilers for Markdown Preview
+
 These should be available in the marketplace of vscode.
 
 It is also possible to view the notes in the github page, where the spoiler function is not supported, which results in the notes to be less readable.
