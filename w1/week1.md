@@ -19,9 +19,7 @@ The true/false table for implication
 When A and B are both T or F, the result is trivial. But can you explain the result on **line 3**?
 
 A few useful logical equalities. </br>
-$A \Longrightarrow B \equiv \neg A \lor B \\
-x = a \equiv x \leq a \land x \geq a \\
-x \not= a \equiv x > a \lor x < a$ </br>
+$A \Longrightarrow B \equiv \neg A \lor B \newline x = a \equiv x \leq a \land x \geq a \newline x \not= a \equiv x > a \lor x < a$ </br>
 You can represent all the relations of integers( and natural numbers) only with $\leq$
 
 ## Assertions
