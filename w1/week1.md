@@ -5,6 +5,7 @@ My email address: ge43yeb@mytum.de </br>
 Please register yourself for the zulip group of the tutorial that you are participating in.</br>
 The link for the group on Wednesday: https://zulip.in.tum.de/#narrow/stream/1626-FPV_Mi-10-12.2C-2-EN </br>
 The link for the group on Thursday: https://zulip.in.tum.de/#narrow/stream/1633-FPV_Do-13-15-EN </br>
+Or search for the stream **FPV_Do 13-15 EN** <br>
 The notes will be available in my github repository: https://github.com/AlexiosFan/fpv_tut_2023
 
 ## Recap of implication.
