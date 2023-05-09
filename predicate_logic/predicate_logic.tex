@@ -17,7 +17,7 @@ of the course Logic(IN2049) by Prof. Esparza and Prof. Nipkow}}
 \section*{Predicates}
 \begin{enumerate}
     \item Predicates are logical formulas that contain variables and constants. Variables are usually given by $x, y, z$, whereas constants are integers in context of Mini-Java.
-    \item Besides the property of propositional logical formulas, predicates are usually definied with variables.
+    \item Besides the property of propositional logical formulas, predicates are usually definied with relations.
     $P(x)$ is a predicate describing the property of variable x. $x = 0$, $x + 1 < 2$, and $x + y = 0 \land x < 0$ are all 
     predicates of x.
     \item A predicate may contain more than one variables. The number of the variables in the predicate is
@@ -42,7 +42,7 @@ of the course Logic(IN2049) by Prof. Esparza and Prof. Nipkow}}
 \begin{enumerate}
     \item There are two different quantifiers, the universal quantifier $\forall$ and the existential quantifier $\exists$.
     Each quantifier is always followed by a predicate.
-    \item Quantifiers bind variables. The scope of the quantifier contains all of the subformula on the right hand side.
+    \item Quantifiers bind variables. The scope of the quantifier contains all of the subformula on the right side.
     \begin{table}[ht]
         \centering 
         \begin{tabular}{|| p{2.5cm} | p{8cm} ||}
@@ -61,7 +61,7 @@ of the course Logic(IN2049) by Prof. Esparza and Prof. Nipkow}}
         \caption[Table 2]{Boundness of formulas}
     \end{table}
     \item Rectified formula. A formula is rectified if no variable occurs bound and free and if all quantifiers
-    in the formula bind the same variables. 
+    in the formula bind different variables. 
     \begin{table}[ht]
         \centering 
         \begin{tabular}{|| p{5cm} | p{2.5cm} ||}
@@ -78,7 +78,7 @@ of the course Logic(IN2049) by Prof. Esparza and Prof. Nipkow}}
         \caption[Table 2]{Rectifiedness of formulas}
     \end{table}
     If you find a logical formula hard to read,
-    you may convert the formula to a rectified formula. The convertation is possible by renaming the duplicated binding 
+    you may convert the formula to a rectified formula. The convertion is possible by renaming the duplicated binding 
     with a new variable, which does not exist in the current formula.
     \begin{align*}
         \forall x \exists x. x > 0 &\longrightarrow \forall x \exists x_1. x_1 > 0\\
@@ -109,11 +109,21 @@ the contents.
     \item What is the \textbf{maximum} of the arity of a predicate?
     \item What are the \textbf{reflexity, symmetry} and \textbf{transitivity} of a relation?
     \item Given an order $a \leq b \leq c$ with \textbf{transitivity}, convert it into a conjunction of relations.
-    \item If we want to derive \textbf{false} from a logical formula with the relations of integers,
-    what should we look for?
+    \item Let $\sim$ be a reflexive, symmetric and transitive relation over $\mathbb{N} \times \mathbb{N}$ and 
+    $\circ$ be a reflexive, antisymmetric relation over $\mathbb{Z} \times \mathbb{Z}$. Simplify the 
+    following formulas and determine in which set are they valid. ($\leq$ and $<$ are ordinary less equal and less 
+    operators)
+    \begin{enumerate}
+        \item $a \leq b \land b \sim a$
+        \item $a < b \leq a$
+        \item $a \sim b \land a \sim c \Longrightarrow c \sim b$
+        \item $a \sim b \sim c \sim a \Longrightarrow c \circ b$
+        \item $c \circ d \land d \circ c \equiv c \sim d \land d \sim c$
+        \item $a = -3 \land a^2 \sim a \sim b \Longrightarrow a^2 \sim b$
+    \end{enumerate}
 \end{enumerate}
 \subsection*{Quantifiers}
-In the following formulas, name by which quantifier is each $x$ bounded and convert them into rectified formulas.
+In the following formulas, name by which quantifier is each $x$ bound and convert them into rectified formulas.
 \begin{enumerate}
     \item $\forall x \exists x \forall x. x + 1 > 0$
     \item $x > 0 \land \forall x. x < 0 \land (\exists x. x \not=0) \lor x < 0$
@@ -154,7 +164,23 @@ may be inspiring if you are interested.
     \end{itemize}
     The symbol of the relation does not matter, you may replace it with $\geq, \not=, \Longrightarrow$ or whatever you want/define.
     \item $a \leq b \land b \leq c \land a \leq c$
-    \item Any contradictory formula, for example, $a < x \leq a, x = a \land x \not= a$ etc.
+    \item 
+    \begin{enumerate}
+        \item Not simplifiable. It is valid in the set $\{(a, a + k) | a, k \in \mathbb{N}_0 \land a \sim a + k\}$
+        \item $a < b \leq a \equiv \textbf{false}$
+        \item The statement is equivalent to \textbf{true} \begin{align*}
+            &a \sim b \land a \sim c
+            \Longrightarrow b \sim a \land a \sim c
+            \Longrightarrow b \sim c
+            \Longrightarrow c \sim b 
+        \end{align*}
+        \item todo
+        \item The statement holds if and only if $c = d$.
+        Thus, it is valid only over $\{(a, a) | a \in \mathbb{N}_0\}$
+        \item The statement is equivalent to \textbf{true} \begin{align*}
+            a = -3 \land a^2 \sim a \sim b \Longrightarrow a^2 \sim a \sim b \Longrightarrow a^2 \sim b
+        \end{align*}
+    \end{enumerate}
 \end{enumerate}
 \subsection*{Quantifiers and Substitutions}
 \begin{enumerate}
