@@ -110,9 +110,10 @@ the contents.
     \item What are the \textbf{reflexity, symmetry} and \textbf{transitivity} of a relation?
     \item Given an order $a \leq b \leq c$ with \textbf{transitivity}, convert it into a conjunction of relations.
     \item Let $\sim$ be a reflexive, symmetric and transitive relation over $\mathbb{N} \times \mathbb{N}$ and 
-    $\circ$ be a reflexive, antisymmetric relation over $\mathbb{Z} \times \mathbb{Z}$. Simplify the 
-    following formulas and determine in which set are they valid. ($\leq$ and $<$ are ordinary less equal and less 
-    operators)
+    $\circ$ be a reflexive, antisymmetric relation over $\mathbb{Z} \times \mathbb{Z}$. $\leq$ and $<$ are the ordinary less equal and less relations.
+    Simplify the following formulas. For each one, determine which sets the variables must belong to so that the formula is well defined and then determine what set satisfies the formula.
+    \\
+    \underline{Example}: $a \sim b$ dictates that $a, b \in \mathbb{N}$ as $\sim$ is only defined over natural numbers. The formula is satisfied iff $a \sim b$, which we cannot narrow down any further since we know nothing about the $\sim$ relation.
     \begin{enumerate}
         \item $a \leq b \land b \sim a$
         \item $a < b \leq a$
@@ -166,20 +167,19 @@ may be inspiring if you are interested.
     \item $a \leq b \land b \leq c \land a \leq c$
     \item 
     \begin{enumerate}
-        \item Not simplifiable. It is valid in the set $\{(a, a + k) | a, k \in \mathbb{N}_0 \land a \sim a + k\}$
-        \item $a < b \leq a \equiv \textbf{false}$
-        \item The statement is equivalent to \textbf{true} \begin{align*}
-            &a \sim b \land a \sim c
-            \Longrightarrow b \sim a \land a \sim c
-            \Longrightarrow b \sim c
-            \Longrightarrow c \sim b 
+        \item Not simplifiable. $a, b \in \mathbb{N}$ for it to be defined and it holds true for $(a, b) \in \{(a, a + k) | a \in \mathbb{N} \land k \in \mathbb{N}_0 \land a \sim a + k\}$
+        \item $a < b \leq a \equiv \textbf{false}\ \forall a, b \in \mathbb{Z}$
+        \item The statement is equivalent to \textbf{true} $\forall a,b,c \in \mathbb{N}$:
+        \begin{align*}
+            &a \sim b \land a \sim c \\
+            \overset{symmetry}{\Longrightarrow} &b \sim a \land a \sim c\\
+            \overset{transitivity}{\Longrightarrow} &b \sim c\\
+            \overset{symmetry}{\Longrightarrow} &c \sim b
         \end{align*}
-        \item todo
+        \item $\forall a, b, c \in \mathbb{N}$ the statement can be simplified to $a \sim b \sim c \Longrightarrow c \circ b$, as symmetry and reflexivity already cover all the statements that the extra $\sim a$ would give us. If $\sim$ were antisymmetric, we could follow that $b = c$ and consequently $c \circ b$, but as it is, we can't say anything further. The statement therefore holds iff $\neg(a \sim b \sim c) \lor c \circ b$.
         \item The statement holds if and only if $c = d$.
-        Thus, it is valid only over $\{(a, a) | a \in \mathbb{N}_0\}$
-        \item The statement is equivalent to \textbf{true} \begin{align*}
-            a = -3 \land a^2 \sim a \sim b \Longrightarrow a^2 \sim a \sim b \Longrightarrow a^2 \sim b
-        \end{align*}
+        Thus, it is valid only over $(c, d) \in \{(a, a) | a \in \mathbb{N}\}$. Interestingly, this is only necessary for the right hand side (rhs) to imply the lhs. The other direction (lhs implies rhs) holds true due to antisymmetry of $\circ$ and reflexivity of $\sim$.
+        \item The statement is not defined as $a = -3 \not\in \mathbb{N}$ which would be required for $a \sim b$.
     \end{enumerate}
 \end{enumerate}
 \subsection*{Quantifiers and Substitutions}
