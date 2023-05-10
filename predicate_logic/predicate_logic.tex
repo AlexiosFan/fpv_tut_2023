@@ -171,10 +171,10 @@ may be inspiring if you are interested.
         \item $a < b \leq a \equiv \textbf{false}\ \forall a, b \in \mathbb{Z}$
         \item The statement is equivalent to \textbf{true} $\forall a,b,c \in \mathbb{N}$:
         \begin{align*}
-            &a \sim b \land a \sim c \\
-            \overset{symmetry}{\Longrightarrow} &b \sim a \land a \sim c\\
-            \overset{transitivity}{\Longrightarrow} &b \sim c\\
-            \overset{symmetry}{\Longrightarrow} &c \sim b
+            &a \sim b \land a \sim c
+            \overset{symmetry}{\Longrightarrow} b \sim a \land a \sim c
+            \overset{transitivity}{\Longrightarrow} b \sim c
+            \overset{symmetry}{\Longrightarrow} c \sim b
         \end{align*}
         \item $\forall a, b, c \in \mathbb{N}$ the statement can be simplified to $a \sim b \sim c \Longrightarrow c \circ b$, as symmetry and reflexivity already cover all the statements that the extra $\sim a$ would give us. If $\sim$ were antisymmetric, we could follow that $b = c$ and consequently $c \circ b$, but as it is, we can't say anything further. The statement therefore holds iff $\neg(a \sim b \sim c) \lor c \circ b$.
         \item The statement holds if and only if $c = d$.
