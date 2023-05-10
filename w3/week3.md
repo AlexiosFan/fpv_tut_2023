@@ -18,13 +18,21 @@ Here is a list of the weakest preconditions known from the lecture:
 
 Now let's take a look the exercise.
 1. **rand x** </br>
+<span style="color:blue">
 Is there any known command that assigns a random value to **x**?
+</span>
 2. **x = either e1, e2..., en** </br>
+<span style="color:blue">
 Can you transform the command into an *if-then-else* statement and then a logical formula?
+</span>
 3. **x = e in a, b** </br>
+<span style="color:blue">
 Can you transform the command into an *if-then-else* statement and then a logical formula?
+</span>
 4. **stop** </br>
+<span style="color:blue">
 Is there anything in a control flow diagram that has similar behaviour to the **stop** command?
+</span>
 
 ## Loop invariants, Recap
 1. What is a loop invariant? 
