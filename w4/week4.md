@@ -23,10 +23,10 @@ $$I :\equiv x=\sum_{k=0}^i5k \land i\geq0$$
 ## Now, try to show the local consistency with this loop invariant.
 Consider the following questions
   - Why don't we need to include **y** in the loop invariant? <br>
-    >! The assertion at the end of the program does not include **y**, hence it is not necessary to include y to show the 
-    local consistency !<
+     *The assertion at the end of the program does not include **y**, hence it is not necessary to include y to show the 
+    local consistency*
   - Why don't we need to state the **upperbound** of **i** in the loop invariant? <br>
-    >! The loop invariant with the **upperbound** is also correct, it is just the case that we do not need it here. !<
+    *The loop invariant with the **upperbound** is also correct, it is just the case that we do not need it here.*
 
 | WP | WP after simplification |
 | - | - |
@@ -41,9 +41,9 @@ We say this loop invariant is locally consistent.
 
 # Termination 
  - Does a loop-free program terminate? <br>
-   >! Yes !<
+  *Yes!!!*
  - Does a loop-contained program terminate? <br>
-   >! It depends. !<
+  *It depends.*
  - Consider the following programs. For which inputs do they terminate?
  ```c
  // Program 0
@@ -72,20 +72,23 @@ We say this loop invariant is locally consistent.
  // Hint: Let's assume that there is no overflow in this program.
  ```
  - Do you find any metrics that decides the termination of the program? <br>
-  >! If the number of iteration is finite, the program terminates! Thus, we can find a variable that counts the iteration! !<
+ * If the number of iteration is finite, the program terminates! Thus, we can find a variable that counts the iteration!*
  - It is metrics easy to find? Do you think of any alternatives? <br>
-  >!It is not explicitly given, so we may find another metrics that is **monoton decreasing** after each iteration. 
-  When it reaches a bound, the program terminates.!< <br>
+  *It is not explicitly given, so we may find another metrics that is **monoton decreasing** after each iteration.* <br>
+  *When it reaches a bound, the program terminates.*<br>
   Do you find this new metrics in program 2? <br>
-  >! max(0-x, 0-i) = max(-x, -i). When this metrics is less equal 0, the program terminates. !<
-
+ *max(0-x, 0-i) = max(-x, -i). When this metrics is less equal 0, the program terminates.* <br>
+  **Edit: this does not hold when both of x and i are negative. Feel free to contact me, when 
+  you find a better solution**
 ## To summarize
 We can always find a monoton decreasing metrics in a terminating program. The program terminates if and only if this metrics reaches a **bound**, e.g. 0.  
  - How do we modify the program using this approach?
-   1. >! Initialize the metrics before we enter the loop!<
-   2. >! Update the state of the metrics, when we get out of the loop. !<
+   1. Initialize the metrics before we enter the loop
+   2. Update the state of the metrics, when we get out of the loop.
  - What do we show after the modification of the program?
-   >! Same old thing: **Local consistency**!!! !<
+   1. Same old thing: **Local consistency**!!!
+   2. Check $r \geq 0$ before entering the program
+   3. check $r_{new} < r_{old}$ before updating the value of r.
 
 See program 1 modified using this approach
 ```c
@@ -96,7 +99,7 @@ See program 1 modified using this approach
  int i = read();
  int r = max(-x, -i);
 
- while (r <= 0) {
+ while (x * i < 0) {
   x = x + 1;
   i = i + 1;
   r = max(-x, -i);
