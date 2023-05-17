@@ -1,6 +1,8 @@
 # fpv_tut_2023
 Repository for functional programming and verification course 2023. The weekly used notes will be uploaded.
 
+## A brief introduction to the predicate logic is also available!
+Feel free to use it or report errors if you find any!
 
 ## How to use this repo?
 This repo is made up of 2 parts.
