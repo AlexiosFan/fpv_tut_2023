@@ -4,17 +4,14 @@ A first question: On which variable should we perform the induction, a or b?
 
 Note: from now on, a and b are names whereas m and n are two arbitary constant values.
 
-Base case: mul a b terminates on a = 0 and b arbitrary. The result is 0. 
-Let b = m. We show "mul 0 b = 0"
-                                     0 => 0  0=> 0
-                        (PM)--------------------------------
-      Tree1 0 => 0 b => m (match 0 with 0 -> 0 | _ -> ...) => 0
-(APP')---------------------------------------
-                   mul 0 b => 0
+Base case: mul a b terminates on a = 0 and b arbitrary. 
+The result is 0. 
+Let b = m. We show "mul 0 b => 0"
 
 Inductive case:
 Induction Hypothesis: 
-mul a b terminates on a = n and b = m with result "mul a b = n * m"
+mul a b terminates on a = n and b = m with 
+result "mul a b => n * m"
 Goal: mul a b terminates on a = (n + 1) and b = m 
 with result "mul a b => (n + 1) * m"
 
@@ -25,6 +22,8 @@ What is a new truth that we can use from I.H.?
          mul a b => n * m
 
 Proof: 
+
+
                                          m => m   Tree2
                                 (OP)--------------------------------------
                 n + 1 => n + 1    m + mul (n + 1 - 1) m => (n + 1) * m

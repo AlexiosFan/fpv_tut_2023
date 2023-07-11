@@ -1,0 +1,46 @@
+type tree = Node of tree * tree | Empty
+
+let rec nodes t = match t with Empty -> 0
+    | Node (l,r) -> 1 + (nodes l) + (nodes r)
+
+let rec count t =
+  let rec aux t a = match t with Empty -> a
+      | Node (l,r) -> aux r (aux l (a+1))
+  in
+  aux t 0
+
+Show: nodes t = count t
+
+Auxiliary lemma: a + nodes t = aux t a
+Proof by induction on the structure of trees 
+
+Base case: Empty 
+
+                a + nodes Empty 
+(rule nodes)  = a + (match Empty with Empty -> 0 | Node (l, r) -> 1 + (nodes l) + (nodes r))
+(rule match)  = a + 0
+(rule arith)  = a
+(rule match)  = match Empty with Empty -> a | Node (l, r) -> aux r (aux l (a + 1))
+(rule aux)    = aux Empty a
+
+Inductive case: 
+Induction Hypothesis: Note that I.H. is constructed on both subtrees 
+for any arbitrary a1 a2 it holds that 
+IH1: a1 + nodes l = count l a1 and IH2: a2 + nodes r = count r a2 
+
+We then show a + nodes (Node (l, r)) = aux (Node (l, r)) a 
+a + nodes (Node (l, r)) 
+(rule nodes)  = a + (match (Node (l, r))  with Empty -> 0 | Node (l, r) -> 1 + (nodes l) + (nodes r))
+(rule match)  = a + (1 + nodes l + nodes r)
+(rule arith)  = (a + 1) + nodes l + nodes r 
+(rule IH1)   = aux l (a + 1) + nodes r 
+(rule IH2)   = aux r (aux l (a + 1))
+(rule match)  = match (Node (l, r))  with Empty -> a | Node (l, r) -> aux r (aux l (a + 1))
+(rule aux)    = aux (Node (l, r))  a
+
+Finally, we apply this lemma to the original statement 
+               nodes t 
+(rule arith) = 0 + nodes t
+(rule aux)   = aux t 0 
+(rule let)   = let rec aux t a = match t with Empty -> a | Node (l,r) -> aux r (aux l (a+1)) in aux t 0
+(rule count) = count t
