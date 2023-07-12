@@ -24,9 +24,9 @@ Inductive goal: fact_aux acc (n + 1) = acc * fact (n + 1), where acc is an arbit
 
                    fact_aux x (n + 1) 
 (rule fact_aux) =  match (n + 1) with 0 -> x | n -> fact_aux (n * x) (n - 1)
-(rule match)    =  fact_aux (n * x) (n - 1)
-(rule I.H.)     =  (n * x) * (fact n)
-(rule arith)    =  x * n * (fact n)
+(rule match)    =  fact_aux ((n + 1) * x) ((n + 1) - 1)
+(rule I.H.)     =  ((n + 1) * x) * (fact n)
+(rule arith)    =  x * (n + 1) * (fact n)
 (rule match)    =  x * (match (n + 1) with 0 -> 1 | n -> n * fact (n - 1))
 (rule fact)     =  x * fact (n + 1)
 
