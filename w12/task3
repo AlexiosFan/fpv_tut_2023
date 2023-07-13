@@ -13,22 +13,6 @@ let rec count t =
 
 Show: nodes t = count t
 
-
-type tree = 
-| Node of tree * tree (inductive) 
-| Empty
-
-let rec nodes t = match t with Empty -> 0
-    | Node (l,r) -> 1 + (nodes l) + (nodes r)
-
-let rec count t =
-  let rec aux t a = match t with Empty -> a
-      | Node (l,r) -> aux r (aux l (a+1))
-  in
-  aux t 0
-
-Show: nodes t = count t
-
 Auxiliary lemma: a + nodes t = aux t a
 Proof by induction on the structure of trees 
 

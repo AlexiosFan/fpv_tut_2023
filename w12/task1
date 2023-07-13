@@ -1,12 +1,64 @@
 let rec fact n = match n with 0 -> 1
   | n -> n * fact (n - 1)
 
-let rec fact_aux x n = match n with 0 -> x
+let rec fact_aux x n = 
+  match n with 0 -> x
   | n -> fact_aux (n * x) (n - 1)
 
-let fact_iter = fact_aux 1
+let fact_iter = fact_aux 1;;
 
-Show: fact_iter n = fact n 
+Show: aux: fact_aux x n = x * fact n
+Induction over n 
+Base: n = 0 
+Goal: fact_aux x 0 = x * fact 0 
+fact_iter 0
+(rule fact_iter) = fact_aux x 0 
+(rule fact_aux)  = match 0 with 0 -> x | n -> fact_aux (n * x) (n - 1)
+(rule match)     = x
+(rule match)     = x * (match 0 with 0 -> 1 | n -> n * fact (n - 1))
+(rule fact)      = x * fact 0
+
+Inductive Case:
+IH: fact_aux x n = x * fact n 
+holds for all x, n
+Inductive goal: fact_aux x (n + 1) = x * (fact (n + 1)) holds for all n 
+fact_iter (n + 1)
+(rule fact_iter) = fact_aux x (n + 1)
+(rule fact_aux)  = match (n + 1) with 0 -> x | n -> fact_aux (n * x) (n - 1)
+(rule match)     = fact_aux ((n + 1) * x) (n + 1 - 1)
+(rule arith)     = fact_aux ((n + 1) * x) n 
+(rule IH)        = (n + 1) * x * fact n
+
+
+x * fact (n + 1)
+(rule fact)  =  x * (match (n+1) with 0 -> 1 | n -> n * fact (n - 1))
+(rule match) = x * (n + 1) * fact n 
+(rule arith) = (n + 1) * x * fact n
+
+
+using lemma: fact_aux x n = x * fact n
+show: fact_iter n = fact n 
+
+
+
+
+Auxiliary lemma: fact_aux x n = x * fact n 
+Proof by induction on n 
+Base case: n = 0 
+Goal: fact_aux x 0 = x * fact 0
+(*proof of the base case*)
+
+Inductive case: 
+Induction Hypothesis: fact_aux x n = x * fact n 
+Inductive goal: fact_aux x (n + 1) = x * fact (n + 1)
+(*proof of the inductive case*)
+
+Then using the auxiliary lemma, we obtain the initial goal 
+                   fact_iter n 
+(rule fact_iter) = fact_aux 1 n 
+(rule aux)       = 1 * fact n 
+(rule arith)     = fact n
+
 
 Auxiliary lemma: fact_aux x n = x * fact n 
 Proof by induction on n 
@@ -35,3 +87,4 @@ Then using the auxiliary lemma, we obtain the initial goal
 (rule fact_iter) = fact_aux 1 n 
 (rule aux)       = 1 * fact n 
 (rule arith)     = fact n
+
